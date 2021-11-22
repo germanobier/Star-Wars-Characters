@@ -1,0 +1,64 @@
+.mailbox {
+  position: relative;
+  background-color: #232323;
+  border-radius: 8px;
+  width: 410px;
+  height: 244px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-size: 20px;
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.3);
+
+  .hello {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+
+  .input-mail {
+    background-color: #353535;
+    border: 1px solid #FFE81F;
+    height: 32px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 24px 0 26px 0;
+    outline: none;
+    transition-duration: 0.4s;
+  }
+
+  .invalid-mail {
+    font-size: 12px;
+    position: absolute;
+    top: 150px;
+    left: 25px;
+    color: #C47768;
+    opacity: 0;
+    transition-duration: 0.4s;
+  }
+
+  .invalid-mail.on {
+    opacity: 1;
+  }
+
+  .mailbox-button {
+    background-color: #232323;
+    height: 40px;
+    width: 100%;
+    left: 24px;
+    top: 160px;
+    border-radius: 8px;
+    border: 1px solid #353535;
+    font-weight: 700;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.32);
+    transition-duration: 0.4s;
+  }
+
+  .mailbox-button.valid {
+    background-color: #FFE81F;
+    color: #20182B;
+    cursor: pointer;
+  }
+}
