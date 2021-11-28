@@ -1,4 +1,6 @@
 .mailbox {
+  display: none !important;
+
   position: relative;
   background-color: #232323;
   border-radius: 8px;
@@ -42,23 +44,26 @@
     opacity: 1;
   }
 
-  .mailbox-button {
-    background-color: #232323;
-    height: 40px;
-    width: 100%;
-    left: 24px;
-    top: 160px;
-    border-radius: 8px;
-    border: 1px solid #353535;
-    font-weight: 700;
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.32);
-    transition-duration: 0.4s;
-  }
+  
+}
+// atenção com identações aqui
+// button vai para o base como
+.button {
+  background-color: #232323;
+  height: 40px;
+  width: 100%;
+  left: 24px;
+  top: 160px;
+  border-radius: 8px;
+  border: 1px solid #353535;
+  font-weight: 700;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.32);
+  transition-duration: 0.4s;
+}
 
-  .mailbox-button.valid {
-    background-color: #FFE81F;
-    color: #20182B;
-    cursor: pointer;
-  }
+.button.valid {
+  background-color: #FFE81F;
+  color: #20182B;
+  cursor: pointer;
 }

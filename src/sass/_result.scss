@@ -1,0 +1,41 @@
+
+
+main {
+  height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.result-box {
+  background-color: #232323;
+  width: 440px;
+  margin: 0 auto;
+  padding: 24px;
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+
+  .result-title {
+    margin-top: 32px;
+    font-size: 20px;
+  }
+
+  .tag-list {
+    color: #dfdfdf;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .result-tag {
+      background-color: #353535;
+      margin: 8px 8px 1px 0px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  }
+
+  .button.valid {
+    margin-top: 40px;
+  }
+}
