@@ -33,6 +33,12 @@ main {
       padding: 4px 8px;
       border-radius: 4px;
     }
+
+    .result-tag.result-na {
+      background-color: #232323;
+      color: rgba(255, 255, 255, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
   }
 
   .button.valid {
