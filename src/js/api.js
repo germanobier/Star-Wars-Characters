@@ -1,5 +1,12 @@
 const url = "https://swapi.py4e.com/api/";
 
+function getName(response) {
+  const name = response.data.name
+  const tagName = document.querySelector(".char-name")
+  console.log(tagName)
+  tagName.innerText += ` ${name}`
+}
+
 function getMovies(response) {
   const movieUrl = response.data.films;
   if (movieUrl.length == 0) {
@@ -153,6 +160,7 @@ function getChar() {
     .get(`${url}people/4`)
     .then((response) => {
       console.log(response.data);
+      getName(response)
       getMovies(response);
       getStarships(response);
       getVehicles(response);
