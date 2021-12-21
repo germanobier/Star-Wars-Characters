@@ -1,14 +1,13 @@
 const url = "https://swapi.py4e.com/api/";
 
 function getName(response) {
-  const name = response.data.name
+  const name = response.name
   const tagName = document.querySelector(".char-name")
-  console.log(tagName)
   tagName.innerText += ` ${name}`
 }
 
 function getMovies(response) {
-  const movieUrl = response.data.films;
+  const movieUrl = response.films;
   if (movieUrl.length == 0) {
     const movieTitle = "N/A";
     const movieList = document.querySelector(".movie-list");
@@ -38,7 +37,7 @@ function getMovies(response) {
 }
 
 function getStarships(response) {
-  const starshipUrl = response.data.starships;
+  const starshipUrl = response.starships;
   if (starshipUrl.length == 0) {
     const starshipTitle = "N/A";
     const starshipList = document.querySelector(".starship-list");
@@ -68,7 +67,7 @@ function getStarships(response) {
 }
 
 function getVehicles(response) {
-  const vehicleUrl = response.data.vehicles;
+  const vehicleUrl = response.vehicles;
   if (vehicleUrl.length == 0) {
     const vehicleTitle = "N/A";
     const vehicleList = document.querySelector(".vehicle-list");
@@ -98,7 +97,7 @@ function getVehicles(response) {
 }
 
 function getSpecies(response) {
-  const specieUrl = response.data.species;
+  const specieUrl = response.species;
   if (specieUrl.length == 0) {
     const specieTitle = "N/A";
     const specieList = document.querySelector(".specie-list");
@@ -128,7 +127,7 @@ function getSpecies(response) {
 }
 
 function getPlanets(response) {
-  const planetUrl = response.data.homeworld;
+  const planetUrl = response.homeworld;
   if (planetUrl.length == 0) {
     const planetTitle = "N/A";
     const planetList = document.querySelector(".planet-list");
@@ -157,16 +156,16 @@ function getPlanets(response) {
 
 function getChar() {
   axios
-    .get(`${url}people/4`)
+    .get(characterUrl)
     .then((response) => {
-      console.log(response.data);
-      getName(response)
-      getMovies(response);
-      getStarships(response);
-      getVehicles(response);
-      getSpecies(response)
-      getPlanets(response)
+      console.log(response);
+      getName(response.data.results[0])
+      getMovies(response.data.results[0]);
+      getStarships(response.data.results[0]);
+      getVehicles(response.data.results[0]);
+      getSpecies(response.data.results[0])
+      getPlanets(response.data.results[0])
     })
     .catch((error) => console.log(error));
 }
-getChar();
+// getChar()

@@ -1,11 +1,10 @@
 .mailbox {
-  display: none !important;
+  
 
   position: relative;
   background-color: #232323;
   border-radius: 8px;
   width: 410px;
-  height: 244px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -18,9 +17,13 @@
     margin-bottom: 8px;
   }
 
+  .text-area {
+    color: #cecece;
+  }
+
   .input-mail {
     background-color: #353535;
-    border: 1px solid #FFE81F;
+    border: 1px solid rgba(255, 232, 31, 0.3);
     height: 32px;
     width: 100%;
     border-radius: 8px;
@@ -30,7 +33,15 @@
     transition-duration: 0.4s;
   }
 
-  .invalid-mail {
+  .input-mail.focused {
+    border: 1px solid #FFE81F;
+  }
+
+  .input-mail.valid {
+    border: 1px solid #03DAC6;
+  }
+
+  .invalid-text {
     font-size: 12px;
     position: absolute;
     top: 150px;
@@ -40,7 +51,7 @@
     transition-duration: 0.4s;
   }
 
-  .invalid-mail.on {
+  .invalid-text.on {
     opacity: 1;
   }
 
@@ -52,6 +63,7 @@
   background-color: #232323;
   height: 40px;
   width: 100%;
+  margin-bottom: 6px;
   left: 24px;
   top: 160px;
   border-radius: 8px;
@@ -64,6 +76,17 @@
 
 .button.valid {
   background-color: #FFE81F;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+  border: none;
   color: #20182B;
   cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.button.valid.focused {
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid #353535;
 }

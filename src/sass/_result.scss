@@ -1,14 +1,16 @@
 
 
 main {
+  
   height: 100vh;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 
 
 .result-box {
+  display: none;
   background-color: #232323;
   width: 440px;
   margin: 0 auto;

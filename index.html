@@ -23,16 +23,16 @@
   <main>
     <div class="mailbox">
       <h1 class="hello">Olá!</h1>
-      <p>
+      <label class="text-area">
         Para começar seu teste, digite um e-mail:
-      </p>
-      <form action="">
-        <input class="input-mail" type="email" name="" id="" placeholder="exemplo@email.com">
-        <p class="invalid-mail">
-          E-mail inválido
+      </label>
+      <div class="mailbox-form" action="">
+        <input class="input-mail" type="email" name="" id="textarea" placeholder="exemplo@email.com">
+        <p class="invalid-text">
+          <!-- E-mail inválido -->
         </p>
-        <button class="button">Próximo</button>
-      </form>
+        <button class="button mailbox-button">Próximo</button>
+      </div>
     </div>
 
     <div class="result-box">
@@ -111,7 +111,7 @@
     </div>
 
   </main>  
-  <script src="/src/js/mail-validation.js"></script>
   <script src="/src/js/api.js"></script>
+  <script src="/src/js/mail-validation.js"></script>
 </body>
 </html>
