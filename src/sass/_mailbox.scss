@@ -32,15 +32,15 @@
   }
 
   .invalid-input {
-    border: 1px solid #C47768 !important;
+    border: 1px solid #c47768 !important;
   }
 
   .input-mail.focused {
-    border: 1px solid #FFE81F;
+    border: 1px solid #ffe81f;
   }
 
   .input-mail.valid {
-    border: 1px solid #03DAC6;
+    border: 1px solid #03dac6;
   }
 
   .invalid-text {
@@ -48,7 +48,7 @@
     position: absolute;
     top: 150px;
     left: 25px;
-    color: #C47768;
+    color: #c47768;
     opacity: 0;
     transition-duration: 0.4s;
   }
@@ -56,8 +56,6 @@
   .invalid-text.on {
     opacity: 1;
   }
-
-  
 }
 // atenção com identações aqui
 // button vai para o base como
@@ -77,10 +75,10 @@
 }
 
 .button.valid {
-  background-color: #FFE81F;
+  background-color: #ffe81f;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
   border: none;
-  color: #20182B;
+  color: #20182b;
   cursor: pointer;
 
   &:hover {
