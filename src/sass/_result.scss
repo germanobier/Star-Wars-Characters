@@ -1,11 +1,11 @@
-main {
-  // height: 100vh;
-  display: flex;
-  align-items: center;
-}
-
 .result-box {
-  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 0.4s;
   background-color: #232323;
   width: 440px;
   margin: 0 auto;

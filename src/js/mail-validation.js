@@ -1,5 +1,4 @@
 const logo = document.querySelector(".logo");
-const main = document.getElementsByTagName("main")[0];
 const mailbox = document.querySelector(".mailbox");
 const inputMail = document.querySelector(".input-mail");
 const mailboxButton = document.querySelector(".mailbox-button");
@@ -73,7 +72,6 @@ const inputChar = document.createElement("input");
 const searchUrl = "https://swapi.py4e.com/api/people/?search=";
 const resultBox = document.querySelector(".result-box");
 let charValidationStyle = null;
-let charValidation = null;
 let characterUrl = "https://swapi.py4e.com/api/people/?search=";
 let character = null;
 
@@ -95,8 +93,8 @@ inputChar.addEventListener("focusout", () => {
 
 mailboxButton.addEventListener("click", () => {
   if (mailValidation == true) {
-    logo.style.display = "none";
-    main.style.height = "100vh";
+    logo.style.opacity = "0";
+    logo.style.visibility = "hidden";
     mailboxButton.classList.remove("valid");
     hello.style.display = "none";
     inputMail.style.display = "none";
@@ -142,16 +140,16 @@ mailboxButton.addEventListener("click", () => {
           invalidText.style.top = "130px";
           invalidText.classList.add("on");
           invalidText.innerText = "Personagem inválido";
-          // charValidation = false
           character = "";
           characterUrl = "";
         } else {
           getChar();
           character = "";
           characterUrl = "";
-          // charValidation = true
-          resultBox.style.display = "initial";
-          mailbox.style.display = "none";
+          resultBox.style.visibility = "initial";
+          resultBox.style.opacity = "1";
+          mailbox.style.visibility = "hidden";
+          mailbox.style.opacity = "0";
         }
       })
       .catch((error) => console.log(error));
@@ -159,8 +157,10 @@ mailboxButton.addEventListener("click", () => {
 });
 
 resultButton.addEventListener("click", () => {
-  resultBox.style.display = "none";
-  mailbox.style.display = "initial";
+  resultBox.style.visibility = "hidden";
+  resultBox.style.opacity = "0";
+  mailbox.style.visibility = "initial";
+  mailbox.style.opacity = "1";
   document.querySelector(".char-name").innerText = "";
   const tags = document.querySelectorAll(".result-tag");
   for (tag of tags) {

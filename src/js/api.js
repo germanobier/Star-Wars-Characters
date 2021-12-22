@@ -170,4 +170,3 @@ function getChar() {
     })
     .catch((error) => console.log(error));
 }
-// getChar()

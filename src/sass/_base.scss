@@ -10,7 +10,45 @@ body {
   background-image: url("/src/images/StarWarsBackground.png");
 }
 
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 h1,
 p {
   color: #cecece;
+}
+
+.button {
+  background-color: #232323;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 6px;
+  left: 24px;
+  top: 160px;
+  border-radius: 8px;
+  border: 1px solid #353535;
+  font-weight: 700;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.32);
+  transition-duration: 0.4s;
+}
+
+.button.valid {
+  background-color: #ffe81f;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
+  border: none;
+  color: #20182b;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.button.valid.focused {
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid #353535;
 }
