@@ -1,8 +1,11 @@
+const logo = document.querySelector(".logo")
+const main = document.getElementsByTagName("main")[0]
 const mailbox = document.querySelector(".mailbox");
 let invalid_text = document.querySelector(".invalid-text");
 let mailValidation = null;
 const input_mail = document.querySelector(".input-mail");
 const mailbox_button = document.querySelector(".mailbox-button");
+const resultButton = document.querySelector(".result-button")
 
 function inputMailFocused() {
   input_mail.classList.add("focused");
@@ -32,11 +35,11 @@ function emailValidation() {
   }
 
   if (mailValidation == false && input_mail.value.length > 0) {
-    input_mail.style.border = "1px solid #C47768";
+    input_mail.classList.add("invalid-input")
     invalid_text.classList.add("on");
     invalid_text.innerText = "E-mail inválido";
   } else {
-    input_mail.style.border = "";
+    input_mail.classList.remove("invalid-input")
     invalid_text.classList.remove("on");
   }
 }
@@ -67,7 +70,9 @@ const hello = document.querySelector(".hello");
 const textArea = document.querySelector(".text-area");
 const mailboxForm = document.querySelector(".mailbox-form");
 const inputChar = document.createElement("input");
-let charValidation = null;
+const searchUrl = "https://swapi.py4e.com/api/people/?search="
+let charValidationStyle = null;
+let charValidation = null
 let characterUrl = "https://swapi.py4e.com/api/people/?search=";
 let character = null;
 const resultBox = document.querySelector(".result-box");
@@ -88,25 +93,14 @@ inputChar.addEventListener("focusout", () => {
   inputCharFocusOut();
 });
 
-function characterValidation() {
-  if (inputChar.value.length >= 1) {
-    charValidation = true;
-    mailbox_button.classList.add("valid");
-    inputChar.classList.add("valid");
-  } else {
-    charValidation = false;
-    mailbox_button.classList.remove("valid");
-    inputChar.classList.remove("valid");
-  }
-}
-
 mailbox_button.addEventListener("click", () => {
   if (mailValidation == true) {
+    logo.style.display = "none"
+    main.style.height = "100vh"
     mailbox_button.classList.remove("valid");
     hello.style.display = "none";
     input_mail.style.display = "none";
-    textArea.innerHTML =
-      "Agora, digite seu personagem favorito de <br> Star Wars";
+    textArea.innerHTML = "Agora, digite seu personagem favorito de <br> Star Wars";
     inputChar.setAttribute("type", "text");
     inputChar.setAttribute("placeholder", "Ex: Darth Vader");
     inputChar.classList.add("input-mail");
@@ -114,32 +108,65 @@ mailbox_button.addEventListener("click", () => {
   }
 });
 
+function characterValidation() {
+  if (inputChar.value.length >= 1) {
+    charValidationStyle = true;
+    inputChar.classList.remove("invalid-input")
+    invalid_text.classList.remove("on");
+    mailbox_button.classList.add("valid");
+    inputChar.classList.add("valid");
+  } else {
+    charValidationStyle = false;
+    mailbox_button.classList.remove("valid");
+    inputChar.classList.remove("valid");
+  }
+}
+
 inputChar.addEventListener("keyup", () => {
   characterValidation();
 });
 
 mailbox_button.addEventListener("click", () => {
-  if (charValidation == true) {
+  if (charValidationStyle == true) {
     character = inputChar.value;
-    characterUrl += character;
-    console.log(character);
+    characterUrl = searchUrl + character;
+    inputChar.classList.remove("invalid-input")
+    invalid_text.classList.remove("on");
 
     axios
       .get(characterUrl)
       .then((response) => {
         console.log(response);
         if (response.data.results.length == 0) {
-          inputChar.style.border = "1px solid #C47768";
+          inputChar.classList.add("invalid-input")
           invalid_text.style.top = "130px"
           invalid_text.classList.add("on");
           invalid_text.innerText = "Personagem inválido";
+          // charValidation = false
+          character = ""
+          characterUrl = ""
+          console.log(characterUrl)
         } else {
           getChar();
+          character = ""
+          characterUrl = ""
+          // charValidation = true
           resultBox.style.display = "initial";
           mailbox.style.display = "none";
           console.log(characterUrl);
         }
       })
       .catch((error) => console.log(error));
+  }
+});
+
+resultButton.addEventListener("click", () => {
+  resultBox.style.display = "none";
+  mailbox.style.display = "initial";
+  document.querySelector(".char-name").innerText = ""
+  console.log(document.querySelectorAll(".result-tag"))
+  let tags = document.querySelectorAll(".result-tag")
+  for (tag of tags) {
+    tag.remove()
   }
 });

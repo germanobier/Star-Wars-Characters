@@ -1,6 +1,4 @@
 .mailbox {
-  
-
   position: relative;
   background-color: #232323;
   border-radius: 8px;
@@ -31,6 +29,10 @@
     margin: 24px 0 26px 0;
     outline: none;
     transition-duration: 0.4s;
+  }
+
+  .invalid-input {
+    border: 1px solid #C47768 !important;
   }
 
   .input-mail.focused {

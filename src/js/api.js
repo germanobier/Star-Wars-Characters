@@ -2,8 +2,11 @@ const url = "https://swapi.py4e.com/api/";
 
 function getName(response) {
   const name = response.name
-  const tagName = document.querySelector(".char-name")
-  tagName.innerText += ` ${name}`
+  let tagName = document.querySelector(".char-name")
+  const span = document.createElement("span");
+  tagName.appendChild(span)
+  span.innerHTML = "Informações sobre: <br>"
+  span.innerHTML += name
 }
 
 function getMovies(response) {
