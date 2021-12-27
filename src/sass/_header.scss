@@ -6,11 +6,11 @@
   display: flex;
   justify-content: center;
   margin: 80px auto 73px auto;
-  opacity: 1 ;
+  opacity: 1;
   transition-duration: 0.4s;
 
-  img {
-  max-width: 410px;
-  width: 150%;
+  .logo-img {
+    max-width: 410px;
+    width: 150%;
   }
 }

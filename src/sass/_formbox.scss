@@ -1,4 +1,4 @@
-.mailbox {
+.formbox {
   position: relative;
   background-color: #232323;
   border-radius: 8px;
@@ -54,6 +54,14 @@
     opacity: 0;
     transition-property: opacity;
     transition-duration: 0.4s;
+
+    @media (max-width: 534px) {
+      top: 173px;
+    }
+
+    @media (max-width: 326px) {
+      top: 197px;
+    }
   }
 
   .invalid-text.on {

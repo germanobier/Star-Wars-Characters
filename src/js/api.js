@@ -1,5 +1,4 @@
-const url = "https://swapi.py4e.com/api/";
-const loadingPage = document.querySelector(".loading")
+const loadingPage = document.querySelector(".loading");
 
 function getName(response) {
   const name = response.name;
@@ -11,7 +10,7 @@ function getName(response) {
 }
 
 function getMovies(response) {
-  loadingPage.classList.add("on")
+  loadingPage.classList.add("on");
 
   const movieUrl = response.films;
   if (movieUrl.length == 0) {
@@ -149,8 +148,8 @@ function getPlanets(response) {
     .get(planetUrl)
     .then((response) => {
       setInterval(() => {
-        loadingPage.classList.remove("on")
-      }, 300)
+        loadingPage.classList.remove("on");
+      }, 300);
       const planetTitle = response.data.name;
       const planetList = document.querySelector(".planet-list");
       const planetTag = document.createElement("li");
