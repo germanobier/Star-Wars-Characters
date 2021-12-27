@@ -14,6 +14,11 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
+  <div class="loading">
+    <img src="/src/images/IconeStortmTrooper.png" alt="">
+    <h1>Carregando...</h1>
+  </div>
+
   <header>
     <div class="logo">
       <img src="/src/images/LogoStarWars.png" alt="logo star wars">
@@ -21,7 +26,7 @@
   </header>
 
   <main>
-    <div class="mailbox content-transition">
+    <div class="mailbox">
       <h1 class="hello">Olá!</h1>
       <label class="text-area">
         Para começar seu teste, digite um e-mail:
@@ -35,7 +40,7 @@
       </div>
     </div>
 
-    <div class="result-box content-transition">
+    <div class="result-box">
       <h1 class="char-name">
         <!-- Informações sobre: <br> -->
       </h1>
@@ -43,66 +48,26 @@
       <div>
         <p class="result-title">Filmes:</p>
         <ul class="tag-list movie-list">
-          <!-- <li class="result-tag">
-            <span>
-              A Ameaça Fantasma
-            </span>
-          </li>
-          <li class="result-tag">
-            <span>
-              Ataque dos Clones
-            </span>
-          </li>
-          <li class="result-tag">
-            <span>
-              A Vingança dos Sith
-            </span>
-          </li>
-          <li class="result-tag">
-            <span>
-              O Retorno de Jedi
-            </span> -->
-          </li>
         </ul>
       </div>
       <div>
         <p class="result-title">Naves:</p>
         <ul class="tag-list starship-list">
-          <!-- <li class="result-tag">
-            <span>
-              TIE advanced x1
-            </span>
-          </li> -->
         </ul>
       </div>
       <div>
         <p class="result-title">Veículos:</p>
         <ul class="tag-list vehicle-list">
-          <!-- <li class="result-tag result-na">
-            <span>
-              N/A
-            </span>
-          </li> -->
         </ul>
       </div>
       <div>
         <p class="result-title">Espécie:</p>
         <ul class="tag-list specie-list">
-          <!-- <li class="result-tag result-na">
-            <span>
-              N/A
-            </span>
-          </li> -->
         </ul>
       </div>
       <div>
         <p class="result-title">Planeta:</p>
         <ul class="tag-list planet-list">
-          <!-- <li class="result-tag">
-            <span>
-              Tatooine
-            </span>
-          </li> -->
         </ul>
       </div>
       <button class="result-button button valid">
