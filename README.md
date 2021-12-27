@@ -1,0 +1,1 @@
+Para rodar o projeto, basta abrir o index.html normalmente.
