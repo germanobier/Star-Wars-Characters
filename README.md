@@ -6,7 +6,7 @@
   <h3>Sobre o projeto:</h3>
   O Star Wars Characters é um site para o usuário consultar as informações dos seus preferidos personagens de Star Wars.
   <br>
-  As informações são obtidas através de uma API pública, a SWAPI.
+  As informações são obtidas através de uma API pública, a <a href="https://swapi.dev/">SWAPI</a>.
   <br>
   Para fazer as requisições, foi utilizado o AXIOS.
   <br>
