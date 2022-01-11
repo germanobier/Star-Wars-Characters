@@ -1,8 +1,8 @@
-  <h1><a href="">Clique aqui para ver o resultado do Star Wars Characters pelo GitHub Pages.</a></h1>
+  <h3><a href="">Clique aqui para ver o resultado do Star Wars Characters pelo GitHub Pages.</a></h3>
   <br>
-  <h2>Pagina principal:</h2>
+  <h2>Pagina principal: 🛸</h2>
   <br>
-  <img src=""></img>
+  <img src="/src/images/image.png"</img>
   <br>
   <h3>Sobre o projeto:</h3>
   O Star Wars Characters é um site para o usuário consultar as informações dos seus preferidos personagens de Star Wars.
@@ -11,4 +11,5 @@
   <br>
   Para fazer as requisições, foi utilizado o AXIOS.
   <br>
+  <h3>Instruções:</h3>
   Para rodar o projeto, basta abrir o index.html normalmente.
